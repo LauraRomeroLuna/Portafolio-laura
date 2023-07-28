@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos -->
+    <meta charset="utf-8">
+    <meta name="author" content="Laura Luna">
+    <meta name="description" content="Portafolio de desarrollo web de Laura Romero Luna">
+    <meta name="keywords" content="HTML, CSS, JavaScript,Bootstrap">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Titulo -->
+    <title>Laura Luna | Desarrollo Web Front-End</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="imagenes/statistics.png">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- Iconos de Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <!-- CSS -->
+    <link href="style.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Rubik+Dirt&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Barra de navegacion -->
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-toggler">
+          <a class="navbar-brand" href="#">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu4yUsl3UKkrOc5PnLA9sgIfW8fX9YHu5vwA&usqp=CAU" width="50" alt="Logo de la página web">
+          </a>
+          <ul class="navbar-nav d-flex justify-content-center align-items-center">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#sobre-mi">Sobre mí</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyectos">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#testimonios">Testimonios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contacto">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Seccion Hero -->
+    <section class="hero align-items-stretch">
+      <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
+        <img class="hero-imagen-desarrollador rounded-circle" src="imagenes/WhatsApp Image 2023-07-25 at 7.57.21 PM.jpeg" alt="Foto de Laura">
+        <h1>Laura Luna</h1>
+        <!--<h2>Desarrollo sitios web y escribo artículos sobre programación.</h2>-->
+
+        <!--Animación con JavaScript-->
+        <h2 class="text-primary mb-4" id="typewriter"></h2>
+      </div>
+      <div class="hero-inferior">
+        <img class="hero-inferior-imagen img-fluid" src="data:image/jpeg;base64,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" alt="Monitor, laptop y logos de HTML, CSS, JavaScript y React.">
+      </div>
+    </section>
+    <section>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Biografía
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Nació el 18 de octubre de 1998.</strong> Durante su infancia vivió en León Guanajuato en un rancho donde el contacto con la naturaleza era inevitable, junto a sus 9 hermanos creció llena de carencias pero muy feliz, a los 16 años en busca de nuevas oportunidades llego a San Juan de los Lagos donde cuso la preparatoria, posteriormente se dedicó al comercio ya que no contaba con los recursos para estudiar una carrera, fue hasta 3 años después cuando se mudó a la ciudad de Aguascalientes con la ilusión de ingresar a la normal para cumplir sus sueño de ser docente de matemáticas, ha sido hasta ahora un sacrificio estar lejos de su familia desde tan joven, buscar sus medios para seguir y estar lejos de su familia es lo mas complejo. <code></code>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Tiempo libre
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>Música, libros y ejercicio</strong> Dedicar tiempo a sí misma mediante el ejercicio, la música y leer. Debido a los diferentes lugares donde ha vivido el poder adaptarse a nuevos lugares es lo más complicado por lo cual siempre busca actividades nuevas por hacer en solitario ya que no suele ser muy social, disfruta más hacer cosas por sí sola, aprender las novedades mediante la música, la lectura, las aplicaciones y las experiencias.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Curiosidades
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <strong>¿Cuánto conoce de programación?</strong> HTML, CSS y JS eran conceptos completamente desconocidos, durante el bootcamp de tecnolochias fue que comenzó a descubrir este mundo, sabía que la tecnología y el uso de la misma es un aspecto muy importante actualmente sin embargo no es fácil iniciar o a donde recurrir ya que estudiar de lleno una carrera enfocada a esta área no era su prioridad por lo cual iniciar con cursos básicos es la mejor decisión con ello podrá seguir descubriendo los recursos de la web para llevar ese conocimiento a las aulas. 
+             
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Sobre mi -->
+    <section id="sobre-mi" class="sobre-mi seccion-oscura" >
+      <div class="contenedor">
+        <h2 class="seccion-titulo">Conoce a Laura</h2>
+        <p class="seccion-texto">Docente en formación de la enseñanza y aprendizaje de las matemáticas en educación secundaria en la escuela Normal Superior Federal de Aguascalientes, aprendiz de programación y comerciante. Las matemáticas son su pasión, desde niña anhelo ser una educadora que deje huella en sus estudiantes, ahora está a punto de lograrlo  gracias a su esfuerzo y dedicación, no obstante la tecnología y el desarrollo web es indispensable en todas las áreas por ello busca ampliar sus conocimientos  para fortalecer su vocación de educar utilizando las herramientas de la programación y el software. Conoce más del impacto de la tecnología en las aulas y la importancia para el mundo moderno. </p>
+      </div>
+    </section>
+          
+    <!-- Experiencia -->
+    <section class="experiencia seccion-clara">
+      <div class="container text-center">
+        <div class="row">
+          <!-- Desarrollo Web -->
+          <div class="columna col-12 col-md-4">
+            <i class="bi bi-laptop"></i>
+            <p class="experiencia-titulo">Desarrollo Web</p>
+            <p>Los proyectos presentados en este portafolio representan el conocimiento basico de el contenido, en ellos se pueden analizar los elementos básicos, su utilidad y manejo. </p>
+            <div class="badges-contenedor">
+              <span class="badge text-bg-primary">HTML</span>
+              <span class="badge text-bg-primary">CSS</span>
+              <span class="badge text-bg-primary">JavaScript</span>
+              <span class="badge text-bg-primary">bootstrap</span>
+            </div>
+          </div>
+          <!-- Articulos -->
+          <div class="columna col-12 col-md-4">
+            <i class="bi bi-laptop"></i>
+            <p class="experiencia-titulo">Docencia</p>
+            <p> Un docente de Matemáticas debe estar claro de cómo enseñar, cuándo enseñar y para qué evaluar. Debe ser competente no sólo en el conocimiento de las Matemáticas sino en la metodología a utilizar para que el educando sea capaz de construir su propio conocimiento y logre un aprendizaje significativo.</p>
+            <div class="badges-contenedor">
+              <span class="badge text-bg-primary">Evaluar</span>
+              <span class="badge text-bg-primary">Planear</span>
+              <span class="badge text-bg-primary">Resolver</span>
+            </div>
+          </div>
+          <!-- Estudiante -->
+          <div class="columna col-12 col-md-4">
+            <i class="bi bi-laptop"></i>
+            <p class="experiencia-titulo">Estudiante</p>
+            <p>Docente de matemáticas en formación, diplomado en administración de empresas y participante de tecnolochicas pro. </p>
+            <div class="badges-contenedor">
+              <span class="badge text-bg-primary">Tecnolochicas PRO</span>
+              <span class="badge text-bg-primary">ENSFA</span>
+              <span class="badge text-bg-primary">UDG</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proyectos -->
+    <section id="proyectos" class="proyectos-recientes seccion-clara d-flex flex-column">
+      <h2 class="seccion-titulo texto-negro">Mis proyectos recientes</h2>
+      <h3 class="seccion-descripcion">Estos son algunos proyectos que he creado recientemente...</h3>
+      <!-- Galeria de Proyectos -->
+      <div class="container text-center proyectos-contenedor">
+        <div class="row">
+          <!-- Proyecto 1 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="proyecto">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Vqfarwhw_crK8ZpmHrYPVyOVjgiCXVEhNg&usqp=CAU" alt="Proyecto 1">
+              <div class="overlay">
+                <p>Webb espacio</p>
+                <div class="iconos-contenedor">
+                  <a href="https://webbespacio.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github"></i>
+                  </a>
+                  <a href="https://webbespacio.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-laptop"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 2 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="proyecto">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxE82zyyn8duilGUY-1S0a9bDR8eZHWf07Sg&usqp=CAU" alt="Proyecto 1">
+              <div class="overlay">
+                <p>Clon de Google</p>
+                <div class="iconos-contenedor">
+                  <a href="https://laura-luna.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github"></i>
+                  </a>
+                  <a href="https://laura-luna.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-laptop"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Proyecto 3 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="proyecto">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKAPiFn5V0cFPGLIcF2XkjV8kWFcxDmDzktw&usqp=CAU" alt="Proyecto 1">
+              <div class="overlay">
+                <p>Práctica con bootstrap</p>
+                <div class="iconos-contenedor">
+                  <a href="https://boisterous-rolypoly-ac6795.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-github"></i>
+                  </a>
+                  <a href="https://boisterous-rolypoly-ac6795.netlify.app" target="_blank" rel="noopener noreferrer">
+                    <i class="bi bi-laptop"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+      <a href="https://github.com/" target="_blank" rel="noopener noreferrer">
+        <button type="button" class="btn btn-info">
+          Ver más proyectos
+          <i class="bi bi-arrow-right-circle-fill"></i>
+        </button>
+      </a>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="testimonios seccion-clara">
+      <h2 class="seccion-titulo">Testimonios</h2>
+      <h3 class="seccion-descripcion">Grandes testimonios son el resultado de grandes pruebas...</h3>
+      
+      <!-- Carrusel -->
+      <div id="testimonios-carrusel" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <img class="testimonio-imagen rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj2MrQCukRnM7MG-tV-Nd3NBY1d0ExURPxzQ&usqp=CAU" alt="Foto de Manuel">
+              <p class="testimonio-texto">Me complace compartir mi experiencia con Laura Luna, una estudiante verdaderamente comprometida. Desde el primer día que la conocí, quedé impresionado por su dedicación y pasión por el aprendizaje..</p>
+              <div class="testimonio-info">
+                <p class="cliente">Juan Manuel Valdivia</p>
+                <p class="cargo">Comerciante en área automotriz</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <img class="testimonio-imagen rounded-circle" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRKouGaC5wkHjgKIuSSZTrTBBQWc5gEIOPFw&usqp=CAU" alt="Foto de Valentina">
+              <p class="testimonio-texto">Ella destaca en todas las áreas académicas, siempre buscando desafíos adicionales para ampliar sus conocimientos. Su ética de trabajo es ejemplar; nunca se da por vencida ante los obstáculos y siempre está dispuesta a poner el esfuerzo necesario para alcanzar sus metas.</p>
+              <div class="testimonio-info">
+                <p class="cliente">Valentina</p>
+                <p class="cargo">Ingeniera industrial</p>
+              </div>
+            </div>
+        
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonios-carrusel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonios-carrusel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto seccion-oscura">
+      <div class="container">
+        <div class="container text-center rectangulo d-flex justify-content-evenly">
+          <div class="row">
+            <div class="col-10 col-md-4 seccion-titulo">
+              ¡Hablemos!
+            </div>
+            <div class="col-12 col-md-4 descripcion">
+              Un mundo a un clic de distancia.
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="laura_rl.mat21u@ensfa.edu.mx">
+                <button type="button">  
+                  Contacto
+                  <i class="bi bi-envelope-check-fill"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Pie de pagina (footer) -->
+    <footer class="seccion-oscura d-flex flex-column align-items-center justify-content-center"> 
+      <img class="footer-logo" src="https://th.bing.com/th/id/OIP.eQVd9l2lUxrSBTgp_Q7t4gHaDt?w=314&h=175&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Logo del portafolio">
+      <p class="footer-texto text-center">Todos los dias se aprende algo nuevo.<br>Comparte tus proyectos.</p>
+      <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+        </a>
+        <a href="https://github.com/LauraRomeroLuna" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/laura-romero-luna-2a9979281" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="https://instagram.com/lauraluna400?igshid=ZDc4ODBmNjlmNQ==" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a href="laura_rl.mat21u@ensfa.edu.mx" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-envelope"></i>
+        </a>
+      </div>
+      <div class="derechos-de-autor">Creado por Laura Romero Luna (2023) &#169;</div>
+    </footer>
+    <footer class="text-center text-white" style="background-color: #dfd1dc;">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!-- Section: Images -->
+        <section class="">
+          <div class="row">
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="imagenes/WhatsApp Image 2023-07-25 at 8.27.47 PM.jpeg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="imagenes/WhatsApp Image 2023-07-25 at 8.29.23 PM.jpeg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="imagenes/WhatsApp Image 2023-07-25 at 8.29.46 PM.jpeg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="imagenes/WhatsApp Image 2023-07-25 at 8.33.56 PM.jpeg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="imagenes/WhatsApp Image 2023-07-25 at 8.35.29 PM.jpeg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+              <div
+                class="bg-image hover-overlay ripple shadow-1-strong rounded"
+                data-ripple-color="light"
+              >
+                <img
+                  src="imagenes/WhatsApp Image 2023-07-25 at 8.42.54 PM.jpeg"
+                  class="w-100"
+                />
+                <a href="#!">
+                  <div
+                    class="mask"
+                    style="background-color: rgba(251, 251, 251, 0.2);"
+                  ></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section: Images -->
+      </div>
+      <!-- Grid container -->
+    
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://www.instagram.com/lauraluna400/">laura-luna</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+        <script src="main.js"></script>
+
+  </body>
+</html>
